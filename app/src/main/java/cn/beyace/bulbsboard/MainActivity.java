@@ -3,12 +3,32 @@ package cn.beyace.bulbsboard;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
     BulbsBoardView bulbsBoardView;
+    //complex byte array data
+    //no limit
     byte[][] byteData;
+    //simple byte array data
+    //column count max 7
     byte[] simpleByteData;
-    long l = 0x84877578;
+    //int hex array data
+    //column count max 8
+    int l = 0x10101110;
+    int[] hexData = new int[]{
+            0x10000001,
+            0x00000001,
+            0x11111110
+    };
+    //int octal array data
+    //column count max 11
+    int i = 010001000101;
+    int[] octalData = new int[]{
+            010000001001,
+            000000000001,
+            000001000010
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         bulbsBoardView = (BulbsBoardView) findViewById(R.id.bulbsBoardView);
 //        bulbsBoardView.setByteArrayData(BulbsBoardView.parseInt2ByteArray(5));
 //        bulbsBoardView.setSimpleByteArrayData(BulbsBoardView.parseInt2SimpleByteArray(3));
+
     }
 
     @Override
