@@ -42,15 +42,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        CountDownTimer countDownTimer = new CountDownTimer(5000,1000) {
+        CountDownTimer countDownTimer = new CountDownTimer(7000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                bulbsBoardView.setSimpleByteArrayData(BulbsBoardView.parseInt2SimpleByteArray((int) (millisUntilFinished/1000)));
+                bulbsBoardView.setArrayData(BulbsBoardView.parseInt2OctalIntArray((int) (millisUntilFinished/1000-1)), BulbsBoardView.DataType.OCTAL_INT_ARRAY);
             }
 
             @Override
             public void onFinish() {
-                bulbsBoardView.setSimpleByteArrayData(BulbsBoardView.parseInt2SimpleByteArray(0));
+                bulbsBoardView.setArrayData(BulbsBoardView.parseInt2OctalIntArray(0), BulbsBoardView.DataType.OCTAL_INT_ARRAY);
             }
         };
         countDownTimer.start();
